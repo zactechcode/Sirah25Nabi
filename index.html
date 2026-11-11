@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sirah 25 Nabi — Buku Digital 3D Sejarah Islam</title>
+  
+  <meta name="description" content="Website edukasi sejarah 25 Nabi dan Rasul dalam Islam berbasis web dengan komponen Book Slide 3D klasik.">
+  <meta name="author" content="Kelompok Pemrograman Web">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+ 
+  <header class="header-utama">
+    <div class="header-konten">
+      <div class="logo-brand">
+        <h1>SIRAH<span>25</span> NABI</h1>
+      </div>
+
+      <nav class="nav-menu" aria-label="Menu Navigasi">
+        <ul>
+          <li><a href="#beranda">Beranda</a></li>
+          <li><a href="#seksi-buku">📖 Buku 3D</a></li>
+          <li><a href="#katalog">Katalog 25 Nabi</a></li>
+          <li><a href="#quiz">Quiz</a></li>
+          <li><a href="#timeline">Garis Waktu</a></li>
+          <li><a href="#silsilah">Silsilah</a></li>
+        </ul>
+      </nav>
+
+      <!-- Widget Jam & Tanggal Realtime -->
+      <div class="widget-jam">
+        <div id="tanggal-realtime">Memuat Tanggal...</div>
+        <div class="jam-angka" id="jam-realtime">00:00:00</div>
+      </div>
+    </div>
+  </header>
+
+ 
+  <main>
+    <section class="container" id="beranda">
+      <div class="hero-box">
+        <div class="bismillah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+        <h2>Sejarah 25 Nabi & Rasul Berbasis Web</h2>
+        <p>
+          Media edukasi interaktif untuk mempelajari kisah, mukjizat, dan hikmah para utusan Allah SWT. Dilengkapi visual <strong>Buku Digital 3D</strong> bernuansa manuskrip mushaf kuno yang ringan dan ramah dipelajari bagi pemula.
+        </p>
+        <div>
+          <a href="#seksi-buku" class="tombol-aksi">📖 Buka Demo Buku 3D</a>
+          <a href="#katalog" class="tombol-aksi">📜 Lihat 25 Nabi</a>
+          <a href="#quiz" class="tombol-aksi">❓ Uji Pengetahuan</a>
+          <a href="#silsilah" class="tombol-aksi">🌿 Silsilah Nasab</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="seksi-buku" id="seksi-buku">
+      <div class="container" style="padding-top: 0; padding-bottom: 0;">
+        <div class="judul-seksi">
+          <h2>Demo Komponen: Book Slide 3D</h2>
+          <p>Buku digital dua halaman terbuka bergaya perkamen kuno dengan ornamen border dan bayangan lipatan tengah.</p>
+        </div>
+
+        <div class="wadah-buku-3d">
+          <div class="pita-buku" title="Pita Pembatas Buku"></div>
+
+          <!-- Lembaran Buku Terbuka (Kiri & Kanan) -->
+          <div class="buku-terbuka">
+            
+            <!-- Halaman Kiri -->
+            <article class="halaman-buku halaman-kiri">
+              <span class="nomor-nabi-badge" id="buku-nomor">Nabi Ke-01 dari 25</span>
+              <div class="nama-arab-buku" id="buku-arab">آدَمُ عَلَيْهِ السَّلَامُ</div>
+              <h3 class="nama-latin-buku" id="buku-nama">Adam A.S.</h3>
+              <div class="gelar-buku" id="buku-gelar">Abul Basyar (Bapak Manusia)</div>
+
+              <div class="info-tabel-ringkas">
+                <div class="info-item"><strong>Kaum:</strong> <span id="buku-kaum">Bumi</span></div>
+                <div class="info-item"><strong>Usia:</strong> <span id="buku-usia">930 Tahun</span></div>
+                <div class="info-item" style="grid-column: 1 / -1;"><strong>Era:</strong> <span id="buku-era">Era Awal</span></div>
+              </div>
+
+              <strong style="font-size: 0.85rem; margin-bottom: 0.3rem;">Mukjizat Utama:</strong>
+              <ul class="daftar-mukjizat-buku" id="buku-mukjizat">
+                <li>Diciptakan langsung oleh Allah dari tanah liat</li>
+                <li>Diajarkan segala nama benda di alam semesta</li>
+              </ul>
+            </article>
+
+            <!-- Halaman -->
+            <article class="halaman-buku halaman-kanan">
+              <h4 style="font-family: var(--font-judul); margin-bottom: 0.5rem; color: var(--warna-hijau-tua);">Ringkasan Kisah Dakwah</h4>
+              <p class="isi-kisah-buku" id="buku-kisah">
+                Nabi Adam adalah manusia dan nabi pertama yang diciptakan Allah sebagai khalifah di muka bumi...
+              </p>
+
+              <div class="kartu-ayat-buku" id="buku-ayat">
+                QS. Al-Baqarah : 31
+              </div>
+
+              <div class="kartu-hikmah-buku" id="buku-hikmah">
+                Hikmah: Pintu tobat senantiasa terbuka lebar bagi hamba yang tulus mengakui kesalahan.
+              </div>
+            </article>
+
+          </div>
+
+          <!-- Tombol Navigasi Lembar Buku -->
+          <div class="kontrol-buku">
+            <button class="btn-buku" onclick="gantiHalaman('sebelumnya')">← Nabi Sebelumnya</button>
+            <span id="buku-indikator" style="font-size: 0.85rem; font-weight: bold; color: var(--warna-emas-muda);">Kitab Nabi (1/25)</span>
+            <button class="btn-buku" onclick="gantiHalaman('berikutnya')">Nabi Selanjutnya →</button>
+            <button class="btn-buku" style="background: #a93226; color: #fff;" onclick="tutupBuku()">Tutup Buku ✕</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" id="katalog">
+      <div class="judul-seksi">
+        <h2>Direktori 25 Nabi & Rasul</h2>
+        <p>Klik tombol <strong>"Buka Buku Kisah"</strong> pada kartu nabi untuk membaca kitab sejarahnya di atas.</p>
+      </div>
+
+      <!-- Filter Kategori & Pencarian Sederhana -->
+      <div class="bar-pencarian">
+        <button class="btn-filter aktif" id="filter-semua">Semua Nabi (25)</button>
+        <button class="btn-filter" id="filter-ululazmi">★ Rasul Ulul Azmi (5)</button>
+        <input type="text" class="input-cari" id="input-cari" placeholder="Ketik nama nabi atau kaum...">
+      </div>
+
+      <!-- Grid Kartu Nabi  -->
+      <div class="grid-katalog" id="katalog-grid">
+      </div>
+      <!--quiz nabi-->
+    </section>
+    <!-- Seksi Quiz Interaktif 25 Nabi -->
+    <section class="container" id="quiz">
+      <div class="judul-seksi">
+        <h2>Quiz Interaktif 25 Nabi & Rasul</h2>
+        <p>Uji dan asah pengetahuanmu seputar kisah, mukjizat, dan hikmah para utusan Allah SWT.</p>
+      </div>
+
+      <div class="wadah-quiz">
+        <!-- 1. Layar Awal (Intro) -->
+        <div id="quiz-layar-mulai" class="quiz-kartu-panel">
+          <div class="quiz-ikon-intro">🕌</div>
+          <h3 class="quiz-judul-mulai">Uji Wawasan Sejarah Kenabian</h3>
+          <p class="quiz-deskripsi-mulai">
+            Tersedia 10 pertanyaan pilihan ganda pilihan tentang kisah, mukjizat, dan gelar para Nabi & Rasul. Buktikan seberapa dalam pemahamanmu!
+          </p>
+
+          <div class="quiz-fitur-list">
+            <div class="quiz-fitur-item">⏱️ Santai tanpa batas waktu</div>
+            <div class="quiz-fitur-item">💡 Disertai pembahasan & dalil di setiap soal</div>
+            <div class="quiz-fitur-item">⭐ Dapatkan lencana predikat Mumtaz di akhir</div>
+          </div>
+
+          <button class="btn-mulai-quiz" onclick="mulaiQuiz()">Mulai Quiz Sekarang </button>
+        </div>
+
+        <!-- 2. Layar Pertanyaan -->
+        <div id="quiz-layar-soal" class="quiz-kartu-panel" style="display: none;">
+          <div class="quiz-header-bar">
+            <span class="quiz-progres-teks" id="quiz-nomor-soal">Soal 1 dari 10</span>
+            <span class="quiz-skor-live" id="quiz-skor-live">Skor: 0</span>
+          </div>
+
+          <!-- Progress Bar Indikator -->
+          <div class="quiz-progress-track">
+            <div class="quiz-progress-fill" id="quiz-progress-bar" style="width: 10%;"></div>
+          </div>
+
+          <div class="quiz-pertanyaan-box">
+            <h3 id="quiz-teks-soal">Memuat pertanyaan...</h3>
+          </div>
+
+          <!-- Pilihan Jawaban A, B, C, D -->
+          <div class="quiz-opsi-grid" id="quiz-opsi-jawaban">
+          </div>
+
+          <!-- Box Pembahasan Jawaban -->
+          <div class="quiz-pembahasan" id="quiz-pembahasan" style="display: none;">
+            <div class="pembahasan-status" id="pembahasan-status">✓ Jawaban Tepat!</div>
+            <p id="pembahasan-teks">Penjelasan jawaban...</p>
+          </div>
+
+          <!-- Tombol Lanjut Soal -->
+          <div class="quiz-footer-kontrol">
+            <button class="btn-quiz-nav" id="btn-soal-berikutnya" onclick="soalBerikutnya()" style="display: none;">
+              Soal Selanjutnya →
+            </button>
+          </div>
+        </div>
+
+        <!-- 3. Layar Hasil Akhir -->
+        <div id="quiz-layar-hasil" class="quiz-kartu-panel" style="display: none;">
+          <div class="hasil-ikon" id="hasil-ikon">🏆</div>
+          <h3 class="hasil-judul" id="hasil-judul">Selamat! Quiz Selesai</h3>
+          <div class="hasil-predikat-badge" id="hasil-predikat">Mumtaz (Istimewa)</div>
+
+          <div class="hasil-skor-box">
+            <span class="hasil-angka" id="hasil-angka-skor">100</span>
+            <span class="hasil-per">/ 100 Poin</span>
+          </div>
+
+          <div class="hasil-statistik">
+            <div class="stat-kotak stat-benar">
+              <span class="stat-nilai" id="hasil-total-benar">10</span>
+              <span class="stat-nama">Benar</span>
+            </div>
+            <div class="stat-kotak stat-salah">
+              <span class="stat-nilai" id="hasil-total-salah">0</span>
+              <span class="stat-nama">Salah</span>
+            </div>
+          </div>
+
+          <p class="hasil-pesan" id="hasil-pesan">
+            Pemahamanmu tentang sejarah para nabi dan rasul sangat luar biasa!
+          </p>
+
+          <div class="hasil-tombol-grup">
+            <button class="btn-mulai-quiz" onclick="mulaiQuiz()">🔄 Ulangi Quiz</button>
+            <a href="#seksi-buku" class="btn-quiz-sekunder">📖 Buka Kitab Kisah 25 Nabi</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="container" id="timeline">
+      <div class="judul-seksi">
+        <h2>Garis Waktu 5 Era Sejarah Kenabian</h2>
+        <p>Rentang sejarah kenabian yang terbagi ke dalam lima era peradaban besar umat manusia.</p>
+      </div>
+
+      <!-- Garis Waktu 5 Era -->
+      <div class="kotak-timeline">
+        <div class="kartu-era">
+          <h3>Era I: Awal Kemanusiaan</h3>
+          <p>Masa penciptaan dan peradaban awal: Nabi Adam A.S., Idris A.S., Nuh A.S., Hud A.S., dan Shaleh A.S.</p>
+        </div>
+        <div class="kartu-era">
+          <h3>Era II: Pemurnian Tauhid & Pembina Ka'bah</h3>
+          <p>Masa bapak para nabi: Nabi Ibrahim A.S., Luth A.S., Ismail A.S., Ishaq A.S., Ya'qub A.S., dan Yusuf A.S.</p>
+        </div>
+        <div class="kartu-era">
+          <h3>Era III: Ujian Kesabaran & Pembebasan Bani Israil</h3>
+          <p>Masa perlawanan tirani: Nabi Ayyub A.S., Syu'aib A.S., Musa A.S., Harun A.S., dan Dzulkifli A.S.</p>
+        </div>
+        <div class="kartu-era">
+          <h3>Era IV: Kerajaan Agung & Pembela Kebenaran</h3>
+          <p>Masa kejayaan hukum adil: Nabi Daud A.S., Sulaiman A.S., Ilyas A.S., Ilyasa' A.S., dan Yunus A.S.</p>
+        </div>
+        <div class="kartu-era">
+          <h3>Era V: Mukjizat Ruhani & Risalah Penutup</h3>
+          <p>Masa risalah universal: Nabi Zakariya A.S., Yahya A.S., Isa A.S., dan Nabi Muhammad S.A.W.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seksi Pohon Silsilah 25 Nabi (Simpel, Kompak, & Responsif) -->
+    <section class="container seksi-silsilah" id="silsilah">
+      <div class="judul-seksi">
+        <div class="bismillah-sub">شَجَرَةُ الأَنْبِيَاءِ وَالمُرْسَلِين</div>
+        <h2>Pohon Silsilah 25 Nabi & Rasul</h2>
+        <p>Bagan alur silsilah nasab yang simpel dan ringkas dari <strong>Nabi Adam A.S.</strong> hingga <strong>Nabi Muhammad S.A.W.</strong> Klik nama nabi untuk langsung membaca kisahnya di atas.</p>
+      </div>
+
+      <div class="silsilah-wadah-simpel">
+        
+        <!-- BAGIAN 1: BATANG UTAMA (ERA AWAL HINGGA NABI IBRAHIM) -->
+        <div class="batang-utama">
+          
+          <div class="node-baris">
+            <div class="node-simpel akar" onclick="bukaBuku(0)" title="Klik untuk membaca kisah Nabi Adam A.S.">
+              <span class="node-no">#01</span>
+              <span class="node-nama">Adam A.S.</span>
+              <span class="node-arab">آدَم</span>
+              <span class="node-tag">🌱 Akar Nasab</span>
+            </div>
+          </div>
+
+          <div class="panah-turun">↓ <span class="ket-turun">Syits</span></div>
+
+          <div class="node-baris">
+            <div class="node-simpel" onclick="bukaBuku(1)" title="Klik untuk membaca kisah Nabi Idris A.S.">
+              <span class="node-no">#02</span>
+              <span class="node-nama">Idris A.S.</span>
+              <span class="node-arab">إِدْرِيس</span>
+            </div>
+          </div>
+
+          <div class="panah-turun">↓ <span class="ket-turun">Matusyalakh ➔ Lamak</span></div>
+
+          <div class="node-baris">
+            <div class="node-simpel ululazmi" onclick="bukaBuku(2)" title="Klik untuk membaca kisah Nabi Nuh A.S.">
+              <span class="node-no">#03</span>
+              <span class="node-nama">Nuh A.S.</span>
+              <span class="node-arab">نُوح</span>
+              <span class="node-star">★ Ulul Azmi</span>
+            </div>
+          </div>
+
+          <div class="panah-turun">↓ <span class="ket-turun">Sam bin Nuh</span></div>
+
+          <!-- Cabang Bangsa Arab Kuno (Hud & Shaleh) -->
+          <div class="node-baris kelompok-tengah">
+            <span class="ranting-label">Bangsa Arab Terdahulu:</span>
+            <div class="node-grup-sejajar">
+              <div class="node-simpel" onclick="bukaBuku(3)" title="Klik untuk membaca kisah Nabi Hud A.S.">
+                <span class="node-no">#04</span>
+                <span class="node-nama">Hud A.S.</span>
+                <span class="node-arab">هُود</span>
+              </div>
+              <div class="node-simpel" onclick="bukaBuku(4)" title="Klik untuk membaca kisah Nabi Shaleh A.S.">
+                <span class="node-no">#05</span>
+                <span class="node-nama">Shaleh A.S.</span>
+                <span class="node-arab">صَالِح</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="panah-turun">↓ <span class="ket-turun">Tarikh (Azar)</span></div>
+
+          <!-- Tonggak Induk Kenabian: Ibrahim & Luth -->
+          <div class="node-baris kelompok-tengah">
+            <div class="node-grup-sejajar">
+              <div class="node-simpel ululazmi induk-ibrahim" onclick="bukaBuku(5)" title="Klik untuk membaca kisah Nabi Ibrahim A.S.">
+                <span class="node-no">#06</span>
+                <span class="node-nama">Ibrahim A.S.</span>
+                <span class="node-arab">إِبْرَاهِيم</span>
+                <span class="node-star">★ Bapak Para Nabi</span>
+              </div>
+              <div class="node-simpel" onclick="bukaBuku(6)" title="Klik untuk membaca kisah Nabi Luth A.S.">
+                <span class="node-no">#07</span>
+                <span class="node-nama">Luth A.S.</span>
+                <span class="node-arab">لُوط</span>
+                <span class="node-ket">(Keponakan)</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- GARIS PEMISAH / PERCABANGAN BESAR DUA PILAR -->
+        <div class="panah-cabang-dua">
+          <span>↙ DUA CABANG UTAMA DARI NABI IBRAHIM ↘</span>
+        </div>
+
+        <!-- BAGIAN 2: DUA DAHAN BERDAMPINGAN (ISMAIL & ISHAQ) -->
+        <div class="dua-cabang-grid">
+
+          <!-- KOLOM 1: CABANG ISMAIL -->
+          <div class="kotak-cabang cabang-ismail">
+            <div class="judul-cabang">🌿 Cabang Sayyidina Ismail (Arab Hijaz)</div>
+            
+            <div class="alur-cabang">
+              <div class="node-simpel" onclick="bukaBuku(7)" title="Klik untuk membaca kisah Nabi Ismail A.S.">
+                <span class="node-no">#08</span>
+                <span class="node-nama">Ismail A.S.</span>
+                <span class="node-arab">إِسْمَاعِيل</span>
+                <span class="node-ket">Dzabihullah</span>
+              </div>
+
+              <div class="panah-turun">↓ <span class="ket-turun">Adnan ➔ Quraisy ➔ Bani Hasyim</span></div>
+
+              <div class="node-simpel ululazmi puncak-rasul" onclick="bukaBuku(24)" title="Klik untuk membaca kisah Nabi Muhammad S.A.W.">
+                <span class="node-no">#25</span>
+                <span class="node-nama">Muhammad S.A.W.</span>
+                <span class="node-arab">مُحَمَّد</span>
+                <span class="node-star">👑 Khatamul Anbiya</span>
+              </div>
+              <p class="cabang-ringkasan">
+                Penutup seluruh nabi dan rasul, pembawa risalah universal bagi seluruh alam semesta.
+              </p>
+            </div>
+          </div>
+
+          <!-- KOLOM 2: CABANG ISHAQ -->
+          <div class="kotak-cabang cabang-ishaq">
+            <div class="judul-cabang">🌿 Cabang Sayyidina Ishaq (Bani Israil & Sekitarnya)</div>
+            
+            <div class="alur-cabang">
+              
+              <div class="node-grup-sejajar" style="justify-content: center;">
+                <div class="node-simpel" onclick="bukaBuku(8)" title="Klik untuk membaca kisah Nabi Ishaq A.S.">
+                  <span class="node-no">#09</span>
+                  <span class="node-nama">Ishaq A.S.</span>
+                  <span class="node-arab">إِسْحَاق</span>
+                </div>
+              </div>
+
+              <div class="panah-turun">↓</div>
+
+              <div class="node-grup-sejajar" style="justify-content: center;">
+                <div class="node-simpel" onclick="bukaBuku(9)" title="Klik untuk membaca kisah Nabi Ya'qub A.S.">
+                  <span class="node-no">#10</span>
+                  <span class="node-nama">Ya'qub A.S.</span>
+                  <span class="node-arab">يَعْقُوب</span>
+                  <span class="node-ket">(Israil)</span>
+                </div>
+              </div>
+
+              <div class="panah-turun">↓ <span class="ket-turun">Keturunan 12 Asbath & Garis Ishaq</span></div>
+
+              <!-- Ranting Keturunan Terstruktur -->
+              <div class="sub-ranting-list">
+
+                <!-- Jalur Yusuf -->
+                <div class="ranting-item">
+                  <span class="ranting-label">Putra Ya'qub:</span>
+                  <div class="node-simpel" onclick="bukaBuku(10)" title="Klik untuk membaca kisah Nabi Yusuf A.S.">
+                    <span class="node-no">#11</span>
+                    <span class="node-nama">Yusuf A.S.</span>
+                    <span class="node-arab">يُوسُف</span>
+                  </div>
+                </div>
+
+                <!-- Jalur Sabar & Madyan -->
+                <div class="ranting-item">
+                  <span class="ranting-label">Jalur Kesabaran & Madyan:</span>
+                  <div class="node-grup-sejajar">
+                    <div class="node-simpel" onclick="bukaBuku(11)" title="Klik untuk membaca kisah Nabi Ayyub A.S.">
+                      <span class="node-no">#12</span>
+                      <span class="node-nama">Ayyub A.S.</span>
+                    </div>
+                    <div class="node-simpel" onclick="bukaBuku(15)" title="Klik untuk membaca kisah Nabi Dzulkifli A.S.">
+                      <span class="node-no">#16</span>
+                      <span class="node-nama">Dzulkifli A.S.</span>
+                    </div>
+                    <div class="node-simpel" onclick="bukaBuku(12)" title="Klik untuk membaca kisah Nabi Syu'aib A.S.">
+                      <span class="node-no">#13</span>
+                      <span class="node-nama">Syu'aib A.S.</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Jalur Lewi: Musa & Harun -->
+                <div class="ranting-item">
+                  <span class="ranting-label">Garis Pembebasan (Lewi):</span>
+                  <div class="node-grup-sejajar">
+                    <div class="node-simpel ululazmi" onclick="bukaBuku(13)" title="Klik untuk membaca kisah Nabi Musa A.S.">
+                      <span class="node-no">#14</span>
+                      <span class="node-nama">Musa A.S.</span>
+                      <span class="node-star">★ Ulul Azmi</span>
+                    </div>
+                    <div class="node-simpel" onclick="bukaBuku(14)" title="Klik untuk membaca kisah Nabi Harun A.S.">
+                      <span class="node-no">#15</span>
+                      <span class="node-nama">Harun A.S.</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Jalur Raja: Daud & Sulaiman -->
+                <div class="ranting-item">
+                  <span class="ranting-label">Garis Kerajaan (Yahuda):</span>
+                  <div class="node-grup-sejajar">
+                    <div class="node-simpel" onclick="bukaBuku(16)" title="Klik untuk membaca kisah Nabi Daud A.S.">
+                      <span class="node-no">#17</span>
+                      <span class="node-nama">Daud A.S.</span>
+                    </div>
+                    <div class="node-simpel" onclick="bukaBuku(17)" title="Klik untuk membaca kisah Nabi Sulaiman A.S.">
+                      <span class="node-no">#18</span>
+                      <span class="node-nama">Sulaiman A.S.</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Jalur Syam & Ninawa -->
+                <div class="ranting-item">
+                  <span class="ranting-label">Garis Dakwah Syam & Ninawa:</span>
+                  <div class="node-grup-sejajar">
+                    <div class="node-simpel" onclick="bukaBuku(18)" title="Klik untuk membaca kisah Nabi Ilyas A.S.">
+                      <span class="node-no">#19</span>
+                      <span class="node-nama">Ilyas A.S.</span>
+                    </div>
+                    <div class="node-simpel" onclick="bukaBuku(19)" title="Klik untuk membaca kisah Nabi Ilyasa' A.S.">
+                      <span class="node-no">#20</span>
+                      <span class="node-nama">Ilyasa' A.S.</span>
+                    </div>
+                    <div class="node-simpel" onclick="bukaBuku(20)" title="Klik untuk membaca kisah Nabi Yunus A.S.">
+                      <span class="node-no">#21</span>
+                      <span class="node-nama">Yunus A.S.</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Jalur Penutup Bani Israil -->
+                <div class="ranting-item">
+                  <span class="ranting-label">Garis Penutup Bani Israil:</span>
+                  <div class="node-grup-sejajar">
+                    <div class="node-simpel" onclick="bukaBuku(21)" title="Klik untuk membaca kisah Nabi Zakariya A.S.">
+                      <span class="node-no">#22</span>
+                      <span class="node-nama">Zakariya A.S.</span>
+                    </div>
+                    <div class="node-simpel" onclick="bukaBuku(22)" title="Klik untuk membaca kisah Nabi Yahya A.S.">
+                      <span class="node-no">#23</span>
+                      <span class="node-nama">Yahya A.S.</span>
+                    </div>
+                    <div class="node-simpel ululazmi" onclick="bukaBuku(23)" title="Klik untuk membaca kisah Nabi Isa A.S.">
+                      <span class="node-no">#24</span>
+                      <span class="node-nama">Isa A.S.</span>
+                      <span class="node-star">★ Ulul Azmi</span>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer-bawah">
+    <p><strong>Sirah25 Nabi</strong> &bull; Media Edukasi Sejarah Islam Berbasis Web</p>
+    <p style="margin-top: 0.35rem; font-size: 0.8rem; opacity: 0.8;">
+      &copy; 2026 Tim Pengembang Kelompok Pemrograman Web. Dibuat murni menggunakan Vanilla HTML5, CSS3, & JS.
+    </p>
+  </footer>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
